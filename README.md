@@ -1,6 +1,6 @@
 Calculator project for the odin project: https://www.theodinproject.com/paths/foundations/courses/foundations/lessons/calculator
 
-Live preview:
+Live preview: https://urintrolden.github.io/calculator-project/
 
 To do:
 
