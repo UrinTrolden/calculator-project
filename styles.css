@@ -33,6 +33,19 @@
   color: white;
 }
 
+.clearetc {
+  display: grid;
+  grid-area: clearetc;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
+  grid-gap: 10px;
+  background-color: yellow;
+}
+
+.clearetcs {
+  gap: 10px;
+}
+
 .numbers {
   grid-area: numbers;
   background-color: green;
@@ -43,5 +56,18 @@
 }
 
 .number {
+  gap: 10px;
+}
+
+.operands {
+  display: grid;
+  grid-area: operands;
+  background-color: red;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+  grid-gap: 10px;
+}
+
+.operand {
   gap: 10px;
 }
