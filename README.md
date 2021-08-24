@@ -10,8 +10,8 @@ design inspiration https://lh3.googleusercontent.com/Npit9uklgoZjbjajF7JRg5VhrZS
 
 - add display ✅
 - buttons for numbers and decimal (1,2,3,4,5,6,7,8,9,0,.) ✅
-- buttons for operands (+, -, \*, /, =)
-- buttons for other (AC, +/-, %)
+- buttons for operands (+, -, \*, /, =) ✅
+- buttons for other (AC, +/-, %) ✅
 
 2. Javascript logic
 
@@ -19,3 +19,6 @@ design inspiration https://lh3.googleusercontent.com/Npit9uklgoZjbjajF7JRg5VhrZS
 - subtraction
 - multiplication
 - division
+- clear
+- plusminus
+- percent
