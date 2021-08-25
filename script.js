@@ -1,7 +1,7 @@
 const numbtns = document.querySelectorAll(".number");
 const operandbtns = document.querySelectorAll(".operand")
 const displayData = document.querySelector(".displaydata");
-
+const clearetcs = document.querySelectorAll(".clearetcs");
 
 
 let screenDisplay = [];
@@ -16,7 +16,15 @@ let initNumCounter = 0;
 
 function operate(operator, num1, num2) {
     if (operator == "addition") {
-        return parseFloat(num1) + parseFloat(num2);
+        return (parseFloat(num1) + parseFloat(num2)).toFixed(2);
+    } else if (operator == "subtraction") {
+        return (parseFloat(num1) - parseFloat(num2)).toFixed(2);
+    } else if (operator == "equals") {
+        return num2;
+    } else if (operator == "division") {
+        return (parseFloat(num1) / parseFloat(num2)).toFixed(2);
+    } else if (operator == "multiplication") {
+        return (parseFloat(num1) * parseFloat(num2)).toFixed(2);
     }
 }
 
@@ -34,7 +42,7 @@ numbtns.forEach((btn) => {
             screenDisplay = [];
             initNumCounter++;
             displayData.textContent = screenDisplay.join("")
-            console.log("ass")
+            
         }
         screenDisplay.push(btn.id);
         displayData.textContent = screenDisplay.join("");
@@ -44,18 +52,35 @@ numbtns.forEach((btn) => {
 
 operandbtns.forEach((btn) => {
     btn.addEventListener('click', () => {
+        console.log(btn.id) 
         if (initNumCounter == 0) {
             initNum = screenValue;
             initNumCounter++;
             operandType = btn.id;
             screenValue = 0;
+            decimalCheck = 0;
         } else {
             nextNum = screenValue;
             screenValue = operate(operandType, initNum, nextNum);
             displayData.textContent = screenValue;
             initNum = screenValue;
             screenDisplay = [];
+            operandType = btn.id;
+            decimalCheck = 0;
         }
         
     })
+});
+
+clearetcs.forEach((btn) => {
+     btn.addEventListener('click', () => {
+        console.log(btn.id) 
+        if (btn.id === "cleardisplay") {
+             initNum = 0;
+             nextNum = 0;
+             screenValue = 0;
+             screenDisplay = [];
+             displayData.textContent = 0;
+         } else return;
+     })
 })
