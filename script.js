@@ -5,20 +5,22 @@ const displayData = document.querySelector(".displaydata");
 
 
 let screenDisplay = [];
+let screenValue = 0;
 let decimalCheck = 0;
-
+let operandType = "";
 let initNum = 0;
 let nextNum = 0;
+let initNumCounter = 0;
 
-function addition(num) {
-    if (!initNum) {
-        initNum = num;
-        displayData.textContent = initNum;
-    } else {
-        nextNum = num;
-        displayData.textContent = nextNum;
+
+
+function operate(operator, num1, num2) {
+    if (operator == "addition") {
+        return parseFloat(num1) + parseFloat(num2);
     }
 }
+
+
 
 numbtns.forEach((btn) => {
     btn.addEventListener('click', () => {
@@ -28,14 +30,32 @@ numbtns.forEach((btn) => {
             }
             decimalCheck++
         } 
-        
+        if (initNumCounter == 1) {
+            screenDisplay = [];
+            initNumCounter++;
+            displayData.textContent = screenDisplay.join("")
+            console.log("ass")
+        }
         screenDisplay.push(btn.id);
         displayData.textContent = screenDisplay.join("");
+        screenValue = screenDisplay.join("");
     })
 });
 
 operandbtns.forEach((btn) => {
     btn.addEventListener('click', () => {
-        alert(btn.id)
+        if (initNumCounter == 0) {
+            initNum = screenValue;
+            initNumCounter++;
+            operandType = btn.id;
+            screenValue = 0;
+        } else {
+            nextNum = screenValue;
+            screenValue = operate(operandType, initNum, nextNum);
+            displayData.textContent = screenValue;
+            initNum = screenValue;
+            screenDisplay = [];
+        }
+        
     })
 })
