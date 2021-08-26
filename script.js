@@ -81,6 +81,25 @@ clearetcs.forEach((btn) => {
              screenValue = 0;
              screenDisplay = [];
              displayData.textContent = 0;
-         } else return;
+         } else if (btn.id === "plusminus") {
+            if (screenDisplay[0] != "-") {
+                screenDisplay.unshift("-");
+                displayData.textContent = screenDisplay.join("");
+                screenValue = screenDisplay.join("");
+            } else {
+                screenDisplay.shift();
+                displayData.textContent = screenDisplay.join("");
+                screenValue = screenDisplay.join("");
+            }
+         } else if (btn.id === "percent") {
+            initNum = screenValue;
+            nextNum = 100;
+            screenValue = operate("division", initNum, nextNum);
+            displayData.textContent = screenValue;
+            initNum = screenValue;
+            screenDisplay = [];
+            decimalCheck = 0;
+         }
+         return
      })
 })
