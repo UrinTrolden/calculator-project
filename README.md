@@ -16,9 +16,9 @@ design inspiration https://lh3.googleusercontent.com/Npit9uklgoZjbjajF7JRg5VhrZS
 2. Javascript
 
 - addition ✅
-- subtraction
-- multiplication
-- division
-- clear
-- plusminus
-- percent
+- subtraction✅
+- multiplication✅
+- division✅
+- clear✅
+- plusminus✅
+- percent✅
